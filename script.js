@@ -55,6 +55,18 @@ function promptUserForInt(message) {
   }
 }
 
+/* ------------ */
+/* Constructors */
+/* ------------ */
+
+// create a new passwordOption object
+function newPasswordOption(name, generator) {
+  return {
+    name: name,
+    generate: generator,
+  }
+}
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword(8, 128);
