@@ -22,6 +22,38 @@
   ==================================================================================================================================
 */
 
+/* ----------------- */
+/* Utility Functions */
+/* ----------------- */
+
+// return a random integer ranging from min to max
+function randomInt(min, max) {
+  // if 'max' is not defined, assume we want range from 0 to min
+  if (!max) {
+    max = min
+    min = 0
+  }
+
+  // interpolate random value
+  var rand = Math.random()
+  return Math.floor(min*(1 - rand) + rand*max)
+}
+
+// return a random entry from a list
+function getRandomIndex(list) {
+  return list[randomInt(list.length)]
+}
+
+// prompt the user for an integer value, return input object
+function promptUserForInt(message) {
+  var userInput = window.prompt(message)
+  var number = parseInt(userInput)
+
+  return userInput === null ? null : {
+    isValidType: !isNaN(number),
+    value: number
+  }
+}
 
 // Write password to the #password input
 function writePassword() {
