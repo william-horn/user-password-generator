@@ -35,7 +35,7 @@ function randomInt(min, max) {
   }
 
   // interpolate random value
-  var rand = Math.random()
+  let rand = Math.random()
   return Math.floor(min*(1 - rand) + rand*max)
 }
 
@@ -46,10 +46,10 @@ function getRandomIndex(list) {
 
 // prompt the user for a specified value, and a given condition function
 function promptUserForInputType(inputType, message, isValidCondition) {
-  var userInput = window.prompt(message)
-  var isValidType
+  let userInput = window.prompt(message)
+  let isValidType
 
-  var inputObject = {
+  let inputObject = {
     // value:...
     // isValidType:...
     // isValidCondition:...
