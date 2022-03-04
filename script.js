@@ -122,7 +122,7 @@ function getRandomLetterUpper() {
 function generatePassword(minLength, maxLength) {
 
   // initialize password length var
-  var passwordLengthResult
+  let passwordLengthResult
 
   // get input from the user until it is validated or until they exit
   while (true) {
@@ -151,7 +151,7 @@ function generatePassword(minLength, maxLength) {
   }
 
   // list of existing password options
-  var passwordOptions = [
+  let passwordOptions = [
     newPasswordOption("uppercase letters", getRandomLetterUpper),
     newPasswordOption("lowercase letters", getRandomLetterLower),
     newPasswordOption("symbols", getRandomSymbol),
@@ -159,7 +159,7 @@ function generatePassword(minLength, maxLength) {
   ]
 
   // an empty array where the user's selected options will be stored
-  var selectedPasswordOptions = []
+  let selectedPasswordOptions = []
 
   // iterate over all existing password options, prompting the user for each one
   for (let i = 0; i < passwordOptions.length; i++) {
@@ -178,7 +178,7 @@ function generatePassword(minLength, maxLength) {
   }
 
   // password generation
-  var passwordBuffer = ""
+  let passwordBuffer = ""
   for (let i = 0; i < passwordLengthResult.value; i++) {
     passwordBuffer += getRandomIndex(selectedPasswordOptions).generate()
   }
@@ -189,14 +189,14 @@ function generatePassword(minLength, maxLength) {
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword(8, 128);
-  var passwordText = document.querySelector("#password");
+  let password = generatePassword(8, 128);
+  let passwordText = document.querySelector("#password");
 
   if (password) passwordText.value = password;
 }
 
 // get generate button from the HTML
-var generateBtn = document.querySelector("#generate");
+let generateBtn = document.querySelector("#generate");
 
 // add "click" event to the generate button
 generateBtn.addEventListener("click", writePassword);
